@@ -30,7 +30,5 @@ public class Persona implements Serializable {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_domicilio")
     private Domicilio domicilio;
-    @OneToMany(mappedBy = "persona", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Libro> libros;
 }
 
