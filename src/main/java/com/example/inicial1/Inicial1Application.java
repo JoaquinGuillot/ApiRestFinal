@@ -1,7 +1,7 @@
 package com.example.inicial1;
 
 import com.example.inicial1.entities.Domicilio;
-import com.example.inicial1.entities.Persona;
+import com.example.inicial1.entities.*;
 import com.example.inicial1.repositories.PersonaRepository;
 import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
@@ -80,9 +80,44 @@ per1.setDomicilio(dom1);
 
 			personaRepository.save(per1);
 
+			//Creamos un autor con builder
+			Autor autor1 = Autor.builder()
+					.nombre("J.R.R.")
+					.apellido("Tolkien")
+					.biografia("Escritor británico")
+					.build();
 
+			// Creamos un libro con Builder
+			Libro libro1 = Libro.builder()
+					.titulo("El Señor de los Anillos")
+					.fecha(1954)
+					.genero("Fantasía")
+					.paginas(500)
+					.build();
 
+			libro1.getAutores().add(autor1);
+			// Agregamos el libro a la persona
+			per1.getLibros().add(libro1);
 
+			// Creamos otro autor con Builder
+			Autor autor2 = Autor.builder()
+					.nombre("George")
+					.apellido("Orwell")
+					.biografia("Otro escritor")
+					.build();
+
+			// Creamos otro libro con Builder
+			Libro libro2 = Libro.builder()
+					.titulo("1984")
+					.fecha(1949)
+					.genero("Ciencia Ficción")
+					.paginas(300)
+					.build();
+
+			// Agregamos el autor al libro
+			libro2.getAutores().add(autor2);
+			// Agregamos el libro a la persona 2
+			per2.getLibros().add(libro2);
 		};
 
 		};

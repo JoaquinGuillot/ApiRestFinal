@@ -1,5 +1,4 @@
 package com.example.inicial1.entities;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,11 +14,12 @@ import org.hibernate.envers.Audited;
 @ToString
 @Builder
 @Audited
-public class Domicilio {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String calle;
-    private int numero;
-    private Localidad localidad;
+
+public class Localidad {
+
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long id;
+        private String denominacion;
+
 }

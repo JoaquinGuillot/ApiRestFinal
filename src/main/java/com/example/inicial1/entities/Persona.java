@@ -6,6 +6,7 @@ import lombok.experimental.SuperBuilder;
 import org.hibernate.envers.Audited;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -29,5 +30,7 @@ public class Persona implements Serializable {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_domicilio")
     private Domicilio domicilio;
+    @OneToMany(mappedBy = "persona", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Libro> libros;
 }
 
