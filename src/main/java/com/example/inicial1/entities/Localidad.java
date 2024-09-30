@@ -7,7 +7,7 @@ import lombok.*;
 import org.hibernate.envers.Audited;
 
 @Entity
-@Table(name = "domicilio")
+@Table(name = "Localidad")
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter

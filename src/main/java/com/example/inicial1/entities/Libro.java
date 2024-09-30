@@ -7,7 +7,7 @@ import org.hibernate.envers.Audited;
 import java.util.List;
 
 @Entity
-@Table(name = "domicilio")
+@Table(name = "Libro")
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter

@@ -37,6 +37,7 @@ public class Persona extends Base {
             joinColumns = @JoinColumn(name = "persona_id"),
             inverseJoinColumns = @JoinColumn(name = "libro_id")
     )
+    @Builder.Default
     private List<Libro> libros = new ArrayList<Libro>();
 }
 
