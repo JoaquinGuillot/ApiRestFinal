@@ -2,9 +2,12 @@ package com.example.inicial1.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.envers.Audited;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "Libro")
@@ -30,5 +33,8 @@ public class Libro extends Base{
     private int paginas;
 
     @ManyToMany(cascade = CascadeType.REFRESH)
-    private List<Autor> autores;
+
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @Builder.Default
+    private Set<Autor> autores = new HashSet<Autor>();
 }

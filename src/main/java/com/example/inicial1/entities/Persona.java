@@ -3,11 +3,15 @@ package com.example.inicial1.entities;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.envers.Audited;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @AllArgsConstructor
@@ -37,7 +41,8 @@ public class Persona extends Base {
             joinColumns = @JoinColumn(name = "persona_id"),
             inverseJoinColumns = @JoinColumn(name = "libro_id")
     )
+    @LazyCollection(LazyCollectionOption.FALSE)
     @Builder.Default
-    private List<Libro> libros = new ArrayList<Libro>();
+    private Set<Libro> libros = new HashSet<Libro>();
 }
 
