@@ -7,6 +7,7 @@ import org.hibernate.envers.RevisionTimestamp;
 import java.io.Serializable;
 import java.util.Date;
 
+@Entity
 public class Revision implements Serializable {
 
     private static final long serialVersionUID = 1L;

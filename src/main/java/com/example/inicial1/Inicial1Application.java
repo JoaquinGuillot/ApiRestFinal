@@ -17,7 +17,7 @@ import java.util.Optional;
 
 @SpringBootApplication
 public class Inicial1Application {
-	private static final Logger logger = LoggerFactory.getLogger(Inicial1Application.class);
+	 private static final Logger logger = LoggerFactory.getLogger(Inicial1Application.class);
 
 	@Autowired
 	private PersonaRepository personaRepository;
@@ -29,7 +29,7 @@ public class Inicial1Application {
 
 
 
-
+/*
 	@Bean
 	@Transactional
 	CommandLineRunner init(PersonaRepository personaRepository) {
@@ -85,6 +85,6 @@ per1.setDomicilio(dom1);
 		};
 
 
-
+*/
 
 }
