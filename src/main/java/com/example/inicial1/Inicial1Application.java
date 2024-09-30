@@ -29,7 +29,6 @@ public class Inicial1Application {
 
 
 
-/*
 	@Bean
 	@Transactional
 	CommandLineRunner init(PersonaRepository personaRepository) {
@@ -85,6 +84,6 @@ per1.setDomicilio(dom1);
 		};
 
 
-*/
+
 
 }
